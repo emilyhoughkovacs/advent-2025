@@ -13,18 +13,7 @@ class Solution(object):
         lines = f.read().splitlines()
         f.close()
 
-        nums = [l.split('   ') for l in lines]
-        nums = [[int(num) for num in line] for line in nums]
-
-        left = sorted([num[0] for num in nums])
-        right = sorted([num[1] for num in nums])
-
-        theSum = 0
-
-        for x, y in zip(left, right):
-            theSum += abs(x-y)
-
-        return theSum
+        return lines
 
 def main():
     s = Solution()
